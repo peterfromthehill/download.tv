@@ -6,9 +6,10 @@ import sys
 from urlparse import urlparse
 
 if len(sys.argv) != 2:
+	print("%s <url>" % sys.argv[0])
 	sys.exit(1)
 
-slug =  urlparse(sys.argv[1]).fragment.split('/')[2] # "slug" - z.B. 'vor-20-jahren-autounfall'
+slug =  urlparse(sys.argv[1]).path.split('/')[2] # "slug" - z.B. 'vor-20-jahren-autounfall'
 
 
 apihost = 'http://spiegeltv-ivms2-restapi.s3.amazonaws.com';
